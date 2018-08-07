@@ -11,21 +11,21 @@ class Sql extends PDO {
 	//metodo construtor: é chamado toda vez que um novo objeto é instanciado com a Classe SQL.
 	//esse metodo já cria uma conexão com o banco de dados conectando seu objeto automaticamente.
 
-	private function setParams($statement, $parameters = array()){
+	private function setParams($statment, $parameters = array()){
 				//recebe os steatements e dados(parameters) que é um array padrao
 		foreach ($parameters as $key => $value) {
 					
-					$statement->setParam($key, $value);
+					$this->setParam($statment, $key, $value);
 					//lembra do ":ID,$id".. .é isso
 				
 				}
 
 	}
 
-	private function setParam($statement, $key, $value){
+	private function setParam($statment, $key, $value){
 		//Param sem S porque é um parametro Só recebe o parametro da outra funcao Params
 		//a chave e o valor
-		$statement->bindParam($key, $value);
+		$statment->bindParam($key, $value);
 		//faz o statement do parametro
 	}
 
