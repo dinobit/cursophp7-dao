@@ -21,8 +21,24 @@
 //echo json_encode($search);
 
 //carrga um usuário usando o login e a senha
-	$usuario = new Usuario();
-	$usuario->login("root","qwepoi");
-	echo $usuario;  //dar o echo vai invocar o metodo magico to_string que vai trazer um json
+	//$usuario = new Usuario();
+	//$usuario->login("root","qwepoi");
+	//echo $usuario;  //dar o echo vai invocar o metodo magico to_string que vai trazer um json
+
+
+//insert de um novo usuario no banco
+//$aluno = new Usuario("aluno", "@lun0");
+//$aluno->insert();
+//echo $aluno;
+
+
+$usuario = new Usuario();
+$usuario->loadbyId(8);
+
+$usuario->update("professor", "poiuytr");
+
+
+echo $usuario;
+
 
  ?>
