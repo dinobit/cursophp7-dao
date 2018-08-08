@@ -134,6 +134,20 @@ class Usuario{
 				));
 	}
 
+	public function delete(){
+			$sql = new Sql();
+
+			$sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+				':ID'=>$this->getIdusuario()
+				));
+
+			$this->setIdusaurio(0);
+			$this->setDeslogin("");
+			$this->setDessenha("");
+			$this->setDtcadastro(new DateTime());
+
+	}
+
 	public function __construct($login="", $password=""){ //se passar os parametros blz se não eles ficam vazios pois isso é um metodo construtor. bj do gordo.
 
 		$this->setDeslogin($login);

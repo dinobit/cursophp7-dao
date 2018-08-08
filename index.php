@@ -31,12 +31,19 @@
 //$aluno->insert();
 //echo $aluno;
 
+//alterar usuario existente
+//$usuario = new Usuario();
+//$usuario->loadbyId(8);
+//$usuario->update("professor", "poiuytr");
+//echo $usuario;
 
+
+//deletar usuario
 $usuario = new Usuario();
-$usuario->loadbyId(8);
 
-$usuario->update("professor", "poiuytr");
+$usuario->loadById(7);
 
+$usuario->delete();
 
 echo $usuario;
 
